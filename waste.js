@@ -77,6 +77,19 @@ $( document ).ready(function() {
             }
     }
 
+    function searchEvent(data) {
+        getFavourites(function(fav) {
+
+            // parse search query and get results
+            let words = $(".search-field").val().split(" ")
+            let results = searchData(data, words)
+
+            // render results and set click handelers
+            render(results, fav, false);
+            setClickHandlers();
+        });
+    }
+
     // set-up click handelers on stars
     function setClickHandlers() {
         $(".fa-star").each(function() {
@@ -101,17 +114,11 @@ $( document ).ready(function() {
         }
 
         // click handeler for search button
-        $(".search-box").click(function() {
-            getFavourites(function(fav) {
+        $(".search-box").click(searchEvent.bind(this, data));
 
-                // parse search query and get results
-                let words = $(".search-field").val().split(" ")
-                let results = searchData(data, words)
-
-                // render results and set click handelers
-                render(results, fav, false);
-                setClickHandlers();
-            });
+        // click event for enter key press
+        $(".search-field").keypress(function(e) {
+            if (e.keyCode == 13) searchEvent(data)
         });
 
         $(".search-field").keyup(function() {
