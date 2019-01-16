@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- jQuery -->
+    <script src="jquery-3.3.1.min.js"></script>
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <!-- JS -->
+    <!-- DB helpers for getting data -->
+    <script defer src="db.js"></script>
+
+    <!-- function for rendering page -->
+    <script defer src="render.js"></script>
+
+    <!-- main js and click event handlers -->
+    <script defer src="waste.js"></script>
+
+    <!-- main style sheet -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="title-area">
+            <h1 class="title-text"><strong>Toronto Waste Lookup</strong></h1>
+        </div>
+
+        <div class="content-area">
+
+            <div class="search-area">
+                <datalist id="keywords"></datalist>
+                <input class="search-field" type="text" name="query" list="keywords">
+                <div class="search-box-area">
+                    <div class="search-box">
+                        <i class="fas fa-search fa-2x" style="color:white;" data-fa-transform="flip-h"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamically flled on search event -->
+            <div class="result-area"></div>
+
+            <div class="favourite-area">
+                <h2 class="favourite-title">Favourites</h2>
+                <div class="favourite-result-area"></div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
