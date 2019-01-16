@@ -2,13 +2,9 @@
 
 Web developer challenge Shopify
 
-# Application flow
+# Live demo
 
-1. Pull data from API
-2. parse data into JSON
-3. Hash title of object to obtain id
-4. Store fav in database
-5. See diagram for application flow
+[View Live Demo](https://tianyoudai.github.io/ShopifyCodeChallenge/)
 
 # todo
 
